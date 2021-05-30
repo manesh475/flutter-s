@@ -1,0 +1,60 @@
+import 'dart:html';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(title: Text('LOGIN PAGE')),
+            drawer: Drawer(),
+            body: Column(
+              children: [
+                Image.asset("assets/images/login.png"),
+                SizedBox(height: 25.0),
+                Text(
+                  "Welcome to MyApp",
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black
+                ),
+                SizedBox(height: 25.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 16.0, horizontal: 32.0),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                            hintText: ("enter username"),
+                            labelText: ("Username")),
+                      ),
+                      TextFormField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                            hintText: ("enter password"),
+                            labelText: ("Password")),
+                      ),
+                      SizedBox(
+                        height: 25.0,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Text("welcome");
+                        },
+                        child: Text("SIGN IN"),
+                        style: TextButton.styleFrom(),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            )));
+  }
+}
